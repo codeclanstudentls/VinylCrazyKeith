@@ -12,3 +12,8 @@ get '/albums' do
   @albums = Album.all() 
   erb ( :index ) 
 end
+
+get '/artists' do
+  @artists = Artist.all()
+  erb ( :index )
+end

@@ -1,0 +1,11 @@
+<h1>Album Stock Level</h1>
+
+<% for album in @albums %>
+<p>Title: <%= album.title %></p>
+<p>Quantity: <%= album.quantity %></p>
+<p>Artist: <%= album.artist_id() %></p>
+
+<hr/>
+<% end %>
+
+

@@ -3,7 +3,7 @@ require_relative('../db/sql_runner')
 require_relative('album')
 
 
-class Artist()
+class Artist
   attr_accessor :name
   attr_reader :id
 

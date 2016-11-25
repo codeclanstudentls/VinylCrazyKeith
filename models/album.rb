@@ -14,7 +14,7 @@ class Album
 
   def save
     sql = "INSERT INTO albums (title, quantity, artist_id)
-    VALUES ('#{@title}', '#{@quantity}', #{@artist_id})
+    VALUES ('#{@title}', #{@quantity}, #{@artist_id})
     RETURNING *;"
 
     result = SqlRunner.run(sql)

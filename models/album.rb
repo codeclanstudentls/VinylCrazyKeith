@@ -50,6 +50,21 @@ def artist_name_from_id()
   return name
 end
 
+def stock_level()
+  sql = "SELECT quantity FROM albums WHERE id = #{@id};" 
+  result = SqlRunner.run(sql)
+  quantity = result[0]['quantity'].to_i
+  order_level = {'low' => 5, 'medium' => 15, 'high' => 30}
+  if quantity < order_level['low'] 
+    return "Urgent Reorder"
+  elsif quantity < order_level['high']
+    return 'medium'
+  else return 'high'
+  end
+  
+  
+end
+
 
 
 end

@@ -17,3 +17,16 @@ get '/artists' do
   @artists = Artist.all()
   erb ( :index )
 end
+
+get '/artists/new' do
+  erb( :new )
+end
+
+# get '/albums/:id' do
+#   @album = Album.find( params[:id] )
+#   erb ( :show )
+# end
+
+# get '/albums/new' do
+#   erb( :new )
+# end

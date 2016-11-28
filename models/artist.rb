@@ -27,4 +27,5 @@ class Artist
     return artists.map{ |hash| Artist.new(hash) }
   end
 
+
 end

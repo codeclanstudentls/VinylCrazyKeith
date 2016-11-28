@@ -1,8 +1,10 @@
 require('pry-byebug')
-require_relative('models/album')
-require_relative('models/artist')
+require_relative('../models/album')
+require_relative('../models/artist')
 
 #need a delete.all in here and put that method in your albums.rb
+Album.delete_all
+Artist.delete_all
 
 artist1 = Artist.new({ 'name' => 'Mr. Scruff'})
 artist2 = Artist.new({ 'name' => 'Aphex Twin'})

@@ -27,5 +27,10 @@ class Artist
     return artists.map{ |hash| Artist.new(hash) }
   end
 
+  def self.delete_all()
+    sql = "SELECT FROM artists;"
+    SqlRunner.run(sql)
+  end
+
 
 end

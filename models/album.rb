@@ -28,13 +28,19 @@ class Album
     SqlRunner.run(sql)
   end
 
+  def self.delete_all()
+    sql = "DELETE FROM albums;"
+    SqlRunner.run(sql)
+  end
+
+
   def self.all
     sql = "SELECT * FROM albums;"
     albums = SqlRunner.run(sql)
     return albums.map { |hash| Album.new(hash) }
   end
 
-#have a method in here that looks at the artist id and gives back a name ie no need to have an inner join.  look at Val's Zombie bitings part or even Beths Trip advisor? for hints on how to do it.
+#have a method in here that looks at the artist id and gives back a name ie no need to have an inner join.  look at Val's Zombie bitings?
 def artist_name_from_id()
   sql = 
   "SELECT * FROM artists

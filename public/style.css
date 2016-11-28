@@ -1,0 +1,12 @@
+h1{
+  position:fixed;
+  padding-left: 500px;
+  /*text-align: center;
+*/}
+
+body{
+  background-image: url("https://c2.staticflickr.com/6/5288/5279401411_1023ef79b5_b.jpg");
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-position: center;
+}

@@ -18,32 +18,42 @@ album1 = Album.new({
   'title' => 'Drukqs', 
   'quantity' => 50, 
   'artist_id' => artist2.id, 
-  'genre' => 'Electronic'})
+  'genre' => 'Electronic', 
+  'buy_price' => 3, 
+  'sell_price' => 12})
 
 
 album2 = Album.new({ 
   'title' => 'Keep it Unreal', 
   'quantity' => 100, 
   'artist_id' => artist1.id, 
-  'genre' => 'Nu Jazz'})
+  'genre' => 'Nu Jazz', 
+  'buy_price' => 3, 
+  'sell_price' => 10})
 
 album2 = Album.new({ 
   'title' => 'Keep it Unreal', 
   'quantity' => 100, 
   'artist_id' => artist1.id, 
-  'genre' => 'Nu Jazz'})
+  'genre' => 'Nu Jazz', 
+  'buy_price' => 4, 
+  'sell_price' => 15})
 
 album3 = Album.new({ 
   'title' => 'Trouser Jazz', 
   'quantity' => 20, 
   'artist_id' => artist1.id, 
-  'genre' => 'Electronic'})
+  'genre' => 'Electronic', 
+  'buy_price' => 4, 
+  'sell_price' => 15})
 
 album4 = Album.new({ 
   'title' => 'In Sides', 
   'quantity' => 80, 
   'artist_id' => artist3.id, 
-  'genre' => 'Electronic'})
+  'genre' => 'Electronic', 
+  'buy_price' => 5, 
+  'sell_price' => 12})
 
 
 album1.save()

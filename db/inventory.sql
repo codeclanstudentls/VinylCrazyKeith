@@ -11,5 +11,7 @@ id SERIAL8 primary key,
 title VARCHAR(255),
 quantity INT2,
 artist_id INT8 references artists(id),
-genre VARCHAR(255)
+genre VARCHAR(255),
+buy_price INT2,
+sell_price INT2
 );

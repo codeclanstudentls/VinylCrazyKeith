@@ -3,7 +3,7 @@ require_relative('../db/sql_runner')
 #do I need to require_relative('artist') here?
 
 class Album
-  attr_accessor :title, :quantity, :artist_id, :genre
+  attr_accessor :title, :quantity, :artist_id, :genre, :buy_price, :sell_price
   attr_reader :id
 
   def initialize(options) #should I have a 'not null' somewhere below?
@@ -12,25 +12,27 @@ class Album
     @quantity = options['quantity'].to_i 
     @artist_id = options['artist_id'].to_i
     @genre = options['genre']
+    @buy_price = options['buy_price'].to_i
+    @sell_price = options['sell_price'].to_i
   end
 
   def save
-    sql = "INSERT INTO albums (title, quantity, artist_id, genre)
-    VALUES ('#{@title}', #{@quantity}, #{@artist_id}, '#{@genre}')
+    sql = "INSERT INTO albums (title, quantity, artist_id, genre, buy_price, sell_price)
+    VALUES ('#{@title}', #{@quantity}, #{@artist_id}, '#{@genre}', #{@buy_price}, #{@sell_price})
     RETURNING *;"
 
     result = SqlRunner.run(sql)
     @id = result[0]['id'].to_i
   end
 
-  def self.update(options)
-    sql = "UPDATE albums SET
-    title='#{options['title']}',
-    genre='#{options['genre']}',
-    quantity='#{options['quantity']}
-    WHERE id='#{options['id']}'"
-    SqlRunner.run(sql)
-  end
+  # def self.update(options)
+  #   sql = "UPDATE albums SET
+  #   title='#{options['title']}',
+  #   genre='#{options['genre']}',
+  #   quantity='#{options['quantity']}
+  #   WHERE id='#{options['id']}'"
+  #   SqlRunner.run(sql)
+  # end
 
   # Thought this would be better to delete album by id.  John said its not good to delete artist as then you'll get conflicts of foreign keys as album class relies on artist_id
   def self.destroy( id )
@@ -60,6 +62,10 @@ def artist_name_from_id()
   return name
 end
 
+def profit()
+  return @sell_price - @buy_price
+end
+
 def stock_level()
   sql = "SELECT quantity FROM albums WHERE id = #{@id};" 
   result = SqlRunner.run(sql)
@@ -71,6 +77,12 @@ def stock_level()
     return 'medium'
   else return 'high'
   end
+end
+
+
+
+
+
 
   # def self.find( id )
   #   sql = "SELECT * from albums WHERE id=#{id};"
@@ -81,7 +93,7 @@ def stock_level()
   
 
   
-end
+
 
 
 

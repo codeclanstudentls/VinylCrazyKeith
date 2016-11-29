@@ -3,7 +3,7 @@ require_relative('../db/sql_runner')
 #do I need to require_relative('artist') here?
 
 class Album
-  attr_accessor :title, :quantity, :artist_id
+  attr_accessor :title, :quantity, :artist_id, :genre
   attr_reader :id
 
   def initialize(options) #should I have a 'not null' somewhere below?
@@ -11,11 +11,12 @@ class Album
     @title = options['title']
     @quantity = options['quantity'].to_i 
     @artist_id = options['artist_id'].to_i
+    @genre = options['genre']
   end
 
   def save
-    sql = "INSERT INTO albums (title, quantity, artist_id)
-    VALUES ('#{@title}', #{@quantity}, #{@artist_id})
+    sql = "INSERT INTO albums (title, quantity, artist_id, genre)
+    VALUES ('#{@title}', #{@quantity}, #{@artist_id}, '#{@genre}')
     RETURNING *;"
 
     result = SqlRunner.run(sql)
@@ -24,6 +25,8 @@ class Album
 
   def self.update(options)
     sql = "UPDATE albums SET
+    title='#{options['title']}',
+    genre='#{options['genre']}',
     quantity='#{options['quantity']}
     WHERE id='#{options['id']}'"
     SqlRunner.run(sql)

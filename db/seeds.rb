@@ -14,10 +14,36 @@ artist1.save()
 artist2.save()
 artist3.save()
 
-album1 = Album.new({ 'title' => 'Drukqs', 'quantity' => 50, 'artist_id' => artist2.id})
-album2 = Album.new({ 'title' => 'Keep it Unreal', 'quantity' => 100, 'artist_id' => artist1.id})
-album3 = Album.new({ 'title' => 'Trouser Jazz', 'quantity' => 20, 'artist_id' => artist1.id})
-album4 = Album.new({ 'title' => 'In Sides', 'quantity' => 80, 'artist_id' => artist3.id})
+album1 = Album.new({ 
+  'title' => 'Drukqs', 
+  'quantity' => 50, 
+  'artist_id' => artist2.id, 
+  'genre' => 'Electronic'})
+
+
+album2 = Album.new({ 
+  'title' => 'Keep it Unreal', 
+  'quantity' => 100, 
+  'artist_id' => artist1.id, 
+  'genre' => 'Nu Jazz'})
+
+album2 = Album.new({ 
+  'title' => 'Keep it Unreal', 
+  'quantity' => 100, 
+  'artist_id' => artist1.id, 
+  'genre' => 'Nu Jazz'})
+
+album3 = Album.new({ 
+  'title' => 'Trouser Jazz', 
+  'quantity' => 20, 
+  'artist_id' => artist1.id, 
+  'genre' => 'Electronic'})
+
+album4 = Album.new({ 
+  'title' => 'In Sides', 
+  'quantity' => 80, 
+  'artist_id' => artist3.id, 
+  'genre' => 'Electronic'})
 
 
 album1.save()

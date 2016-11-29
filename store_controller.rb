@@ -15,13 +15,14 @@ get '/albums' do
   erb ( :"albums/index" ) 
 end
 
-get '/artists' do
-  @artists = Artist.all()
-  erb ( :"artists/index" )
-end
+# get '/albums/:id' do
+#   @album = Album.find( params[:id] )
+#   erb ( :show )
+# end
 
-get '/artists/new' do
-  erb( :"artists/new" )
+post '/albums/:id/delete' do
+  Album.destroy( params[:id] )
+  redirect to('/albums')
 end
 
 post '/artists' do
@@ -41,11 +42,20 @@ post '/albums' do
   redirect to('/albums')
 end
 
+get '/artists' do
+  @artists = Artist.all()
+  erb ( :"artists/index" )
+end
 
-# get '/albums/:id' do
-#   @album = Album.find( params[:id] )
-#   erb ( :show )
-# end
+get '/artists/new' do
+  erb( :"artists/new" )
+end
+
+
+
+
+
+
 
 
 

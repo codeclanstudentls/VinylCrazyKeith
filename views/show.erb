@@ -1,4 +1,7 @@
-<p>Artist Name: <%=@artist.name() %></p>
-<p>Album Title: <$=@album.title() %></p>
-<p>Quantity: <%=@album.quantity%></p>
+<p>Artist Name: <%= @artist.name() %></p>
+<p>Album Title: <$= @album.title() %></p>
+<!-- <p>Quantity: <%= @album.quantity %></p> -->
 
+<form action="/albums/<%= @album.id %>/delete" method="post">
+<input type="submit" value="Delete"> 
+</form>

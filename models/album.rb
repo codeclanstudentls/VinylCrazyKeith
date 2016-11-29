@@ -6,10 +6,10 @@ class Album
   attr_accessor :title, :quantity, :artist_id
   attr_reader :id
 
-  def initialize(options)
+  def initialize(options) #should I have a 'not null' somewhere below?
     @id = options['id'].to_i
     @title = options['title']
-    @quantity = options['quantity'].to_i
+    @quantity = options['quantity'].to_i 
     @artist_id = options['artist_id'].to_i
   end
 
@@ -20,6 +20,13 @@ class Album
 
     result = SqlRunner.run(sql)
     @id = result[0]['id'].to_i
+  end
+
+  def self.update(options)
+    sql = "UPDATE albums SET
+    quantity='#{options['quantity']}
+    WHERE id='#{options['id']}'"
+    SqlRunner.run(sql)
   end
 
   # Thought this would be better to delete album by id.  John said its not good to delete artist as then you'll get conflicts of foreign keys as album class relies on artist_id
@@ -61,7 +68,15 @@ def stock_level()
     return 'medium'
   else return 'high'
   end
+
+  # def self.find( id )
+  #   sql = "SELECT * from albums WHERE id=#{id};"
+  #   output = SqlRunner.run(sql)
+  #   return Album.new(output.first)
+
+  # end
   
+
   
 end
 

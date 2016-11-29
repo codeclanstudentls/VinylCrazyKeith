@@ -1,5 +1,6 @@
 <h1>Crazy Keith's Music Store</h1>
 
+
 <% for album in @albums %>
 <p>Title: <%= album.title %></p>
 <p>Genre: <%= album.genre %></p>
@@ -8,12 +9,14 @@
 <p>Profit: £<%= album.profit %></p>
 <p>Quantity: <%= album.quantity %></p>
 <p>Stock Level: <%= album.stock_level %></p>
-
 <p>Artist: <%= album.artist_name_from_id %></p>
 
-<form action="/albums/<%= album.id %>/delete" method="post">
-<input type="submit" value="Delete">
+
+
+<form  action="/albums/<%= album.id %>/delete" method="post">
+<input class="Button" type="submit" value="Delete">
 </form>
+
 
 <hr/>
 <% end %>

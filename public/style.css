@@ -40,5 +40,10 @@ body{
   color:whitesmoke;
 }
 
+.button input {
+  padding: 15px;
+  border: 1px solid black;
+  background-color: #F44336;
+}
 
 

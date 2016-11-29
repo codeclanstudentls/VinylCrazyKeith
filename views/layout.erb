@@ -21,16 +21,24 @@
       font-size: 18px;
       text-align: left
     }
-    </style>
+  </style>
 
-<nav>
-  <ul>
-    
-      <a href="/">Home</a>
-      <a href="/albums">All Stock</a>
-    
-  </ul>
-</nav>      
+  <nav class="centered">
+    <ul class="controls">
+      <li>
+        <a href="/">Home</a>
+      </li>
+      <li>
+        <a href="/albums">All Stock</a>
+      </li>
+      <li>
+        <a href="/albums/new">Add Album</a> 
+      </li>
+      <li>
+        <a href="/artists/new">Add Artist</a>
+      </li>
+    </ul>
+  </nav>      
 
   <%= yield %>
 </body>

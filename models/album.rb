@@ -83,7 +83,7 @@ end
 
 
 
-
+  # find album by id
   # def self.find( id )
   #   sql = "SELECT * from albums WHERE id=#{id};"
   #   output = SqlRunner.run(sql)

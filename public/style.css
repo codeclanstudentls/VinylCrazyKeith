@@ -1,12 +1,43 @@
 h1{
+  /*position: fixed;*/
   position: center;
+  
+
   /*padding-left: 450px;*/
   /*text-align: center;*/
 }
 
 body{
-  background-image: url("https://media.giphy.com/media/3lbyjGzJPvIcg/giphy.gif");
+/*  background-image: url("");
   background-attachment: fixed;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: center;*/
+  background-color: silver;
 }
+
+.centered {
+  text-align: center;
+}
+
+.controls {
+  list-style-type: none;
+}
+
+.controls li {
+  display: inline-block;
+  margin-left: 10px;
+  background-color: steelblue;
+  color: red;
+}
+
+.controls a {
+  text-decoration: none;
+  color:whitesmoke;
+}
+
+.controls a:visited {
+  color:whitesmoke;
+}
+
+
+

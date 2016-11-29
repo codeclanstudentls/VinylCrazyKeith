@@ -2,19 +2,37 @@
 
 
 <% for album in @albums %>
-<p>Title: <%= album.title %></p>
-<p>Genre: <%= album.genre %></p>
-<p>Buy Price: £<%= album.buy_price %></p>
-<p>Sell Price: £<%= album.sell_price %></p>
-<p>Profit: £<%= album.profit %></p>
-<p>Quantity: <%= album.quantity %></p>
-<p>Stock Level: <%= album.stock_level %></p>
-<p>Artist: <%= album.artist_name_from_id %></p>
+<table border="1px">
+<th>Album Info</th>
+<th>Pricing</th>
+<th>Stock & Reorder</th>            
+                
+<tr>
+<td><p>Title: <%= album.title %></p></td>
+<td><p>Buy Price: £<%= album.buy_price %></p></td>
+</tr>
 
+<tr>
+<td><p>Artist: <%= album.artist_name_from_id %></p></td>
+<td><p>Sell Price: £<%= album.sell_price %></p></td>
+<td><p>Quantity: <%= album.quantity %></p></td>
+</tr>
+
+<tr>
+<td><p>Genre: <%= album.genre %></p></td>
+<td><p>Profit: £<%= album.profit %></p></td>
+<td><p>Stock Level: <%= album.stock_level %></p></td>
+</tr>
+
+</table>
 
 
 <form  action="/albums/<%= album.id %>/delete" method="post">
 <input class="Button" type="submit" value="Delete">
+</form>
+
+<form  action="/albums/<%= album.id %>/edit" method="get">
+<input class="Button" type="submit" value="Update">
 </form>
 
 

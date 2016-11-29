@@ -25,14 +25,23 @@ class Album
     @id = result[0]['id'].to_i
   end
 
-  # def self.update(options)
-  #   sql = "UPDATE albums SET
-  #   title='#{options['title']}',
-  #   genre='#{options['genre']}',
-  #   quantity='#{options['quantity']}
-  #   WHERE id='#{options['id']}'"
-  #   SqlRunner.run(sql)
-  # end
+  def self.update(options)
+    sql = "UPDATE albums SET
+    title='#{options['title']}',
+    genre='#{options['genre']}',
+    buy_price='#{options['buy_price']}',
+    sell_price='#{options['sell_price']}',
+    quantity='#{options['quantity']}',
+    WHERE id='#{options['id']}'"
+    SqlRunner.run(sql)
+  end
+
+  def self.find( id )
+    sql = "SELECT * from albums WHERE id=#{id};"
+    output = SqlRunner.run(sql)
+    return Album.new(output.first)
+
+  end
 
   # Thought this would be better to delete album by id.  John said its not good to delete artist as then you'll get conflicts of foreign keys as album class relies on artist_id
   def self.destroy( id )
@@ -78,22 +87,6 @@ def stock_level()
   else return 'high'
   end
 end
-
-
-
-
-
-  # find album by id
-  # def self.find( id )
-  #   sql = "SELECT * from albums WHERE id=#{id};"
-  #   output = SqlRunner.run(sql)
-  #   return Album.new(output.first)
-
-  # end
-  
-
-  
-
 
 
 

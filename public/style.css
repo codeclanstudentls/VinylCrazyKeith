@@ -28,6 +28,7 @@ body{
   margin-left: 10px;
   background-color: steelblue;
   color: red;
+  padding: 20px;
 }
 
 .controls a {

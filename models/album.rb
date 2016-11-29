@@ -75,6 +75,10 @@ def profit()
   return @sell_price - @buy_price
 end
 
+def album_stock_price
+  return @quantity * @buy_price
+end
+
 def stock_level()
   sql = "SELECT quantity FROM albums WHERE id = #{@id};" 
   result = SqlRunner.run(sql)

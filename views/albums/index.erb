@@ -10,6 +10,10 @@
 
 <p>Artist: <%= album.artist_name_from_id %></p>
 
+<form action="/albums/<%= album.id %>/delete" method="post">
+<input type="submit" value="Delete">
+</form>
+
 <hr/>
 <% end %>
 

@@ -6,7 +6,7 @@ require_relative('./models/artist')
 
 
 get '/' do
-  return "Test"
+erb( :index )
 end
 
 

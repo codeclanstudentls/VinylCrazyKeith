@@ -57,7 +57,7 @@ get '/albums/:id/edit' do
   erb( :"albums/edit" )
 end
 
-post 'albums/:id' do
+post '/albums/:id' do
   Album.update(params)
   redirect to ('/albums')
 end

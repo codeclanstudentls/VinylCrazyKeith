@@ -31,7 +31,7 @@ class Album
     genre='#{options['genre']}',
     buy_price='#{options['buy_price']}',
     sell_price='#{options['sell_price']}',
-    quantity='#{options['quantity']}',
+    quantity='#{options['quantity']}'
     WHERE id='#{options['id']}'"
     SqlRunner.run(sql)
   end

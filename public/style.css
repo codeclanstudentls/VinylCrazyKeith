@@ -39,6 +39,10 @@ body{
   color:whitesmoke;
 }
 
+.button:hover {
+  cursor: pointer;
+}
+
 .delete {
   background-color: #F44336;
 }
@@ -46,3 +50,22 @@ body{
  background-color: steelblue;
 }
 
+.flex {
+  display:flex;
+}
+
+.flex-center {
+  justify-content: center;
+}
+
+.table {
+  width: 80%;
+  align: center; 
+  border: 1px;
+  border: 1px solid steelblue;
+  border-collapse: collapse;
+}
+
+.table tr, th {
+  text-align: center;
+}

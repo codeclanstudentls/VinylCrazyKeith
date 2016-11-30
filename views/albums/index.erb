@@ -5,37 +5,37 @@
 <% for album in @albums %>
 
 <table style="width:80%", align="center", border="1px";>
-<th>Album Info</th>
-<th>Pricing</th>
-<th>Stock & Reorder</th>            
-                
-<tr>
-<td><p>Title: <%= album.title %></p></td>
-<td><p>Buy Price: £<%= album.buy_price %></p></td>
-<td><p>Album Stock Price: £<%= album.album_stock_price%></p></td>
-</tr>
+  <th>Album Info</th>
+  <th>Pricing</th>
+  <th>Stock & Reorder</th>            
+  
+  <tr>
+    <td><p>Title: <%= album.title %></p></td>
+    <td><p>Buy Price: £<%= album.buy_price %></p></td>
+    <td><p>Album Stock Price: £<%= album.album_stock_price%></p></td>
+  </tr>
 
-<tr>
-<td><p>Artist: <%= album.artist_name_from_id %></p></td>
-<td><p>Sell Price: £<%= album.sell_price %></p></td>
-<td><p>Quantity: <%= album.quantity %></p></td>
-</tr>
+  <tr>
+    <td><p>Artist: <%= album.artist_name_from_id %></p></td>
+    <td><p>Sell Price: £<%= album.sell_price %></p></td>
+    <td><p>Quantity: <%= album.quantity %></p></td>
+  </tr>
 
-<tr>
-<td><p>Genre: <%= album.genre %></p></td>
-<td><p>Profit: £<%= album.profit %></p></td>
-<td><p>Stock Level: <%= album.stock_level %></p></td>
-</tr>
+  <tr>
+    <td><p>Genre: <%= album.genre %></p></td>
+    <td><p>Profit: £<%= album.profit %></p></td>
+    <td><p>Stock Level: <%= album.stock_level %></p></td>
+  </tr>
 
 </table>
 
 
 <form  action="/albums/<%= album.id %>/delete" method="post">
-<input class="button_del" type="submit" value="Delete">
+  <input class="button delete" type="submit" value="Delete">
 </form>
 
 <form  action="/albums/<%= album.id %>/edit" method="get">
-<input class="button_upd" type="submit" value="Update">
+  <input class="button update" type="submit" value="Update">
 </form>
 
 

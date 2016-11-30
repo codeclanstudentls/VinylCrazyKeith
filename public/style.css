@@ -31,10 +31,18 @@ body{
   color:whitesmoke;
 }
 
-.button input {
+.button_del {
   padding: 15px;
-  border: 1px solid black;
+  border: none;
   background-color: #F44336;
+  color:whitesmoke;
 }
 
+.button_upd {
+  padding: 15px;
+  border: none;
+  background-color: steelblue;
+  text-decoration: none; 
+  color:whitesmoke;
+}
 

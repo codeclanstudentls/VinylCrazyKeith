@@ -4,7 +4,7 @@
 
 <% for album in @albums %>
 
-<table style="width:100%", border="1px";>
+<table style="width:80%", align="center", border="1px";>
 <th>Album Info</th>
 <th>Pricing</th>
 <th>Stock & Reorder</th>            
@@ -31,11 +31,11 @@
 
 
 <form  action="/albums/<%= album.id %>/delete" method="post">
-<input class="Button" type="submit" value="Delete">
+<input class="button_del" type="submit" value="Delete">
 </form>
 
 <form  action="/albums/<%= album.id %>/edit" method="get">
-<input class="Button" type="submit" value="Update">
+<input class="button_upd" type="submit" value="Update">
 </form>
 
 

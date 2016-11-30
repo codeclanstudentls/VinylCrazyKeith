@@ -58,14 +58,44 @@ body{
   justify-content: center;
 }
 
+.flex-column {
+  flex-direction: column;
+}
+
 .table {
-  width: 80%;
   align: center; 
   border: 1px;
   border: 1px solid steelblue;
   border-collapse: collapse;
+  min-width: 80%;
+  margin-bottom: 30px;
+  background-color: whitesmoke;
 }
 
-.table tr, th {
+.table td,th {
   text-align: center;
+  padding: 10px;
+}
+
+.table td {
+  border-left: 1px solid steelblue;
+  width: 33%;
+}
+
+.table th {
+  border-bottom: 1px solid steelblue;
+  background-color: steelblue;
+  color: white;
+}
+
+.medium {
+  color: goldenrod;
+}
+
+.reorder {
+  color: crimson;
+}
+
+.high {
+  color: green;
 }
